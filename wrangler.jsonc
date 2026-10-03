@@ -4,14 +4,21 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-10-03",
   "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "gateway-demo.pnlflex.xyz",
+      "custom_domain": true
+    }
+  ],
   "vars": {
-    "ENVIRONMENT": "development",
-    "ALLOWED_ORIGINS": "http://localhost:5173"
+    "ENVIRONMENT": "production",
+    "ALLOWED_ORIGINS": "https://github.com,https://pnlflex.xyz"
   },
   "kv_namespaces": [
     {
       "binding": "MARKET_CACHE",
-      "id": "00000000000000000000000000000000"
+      "id": "06a4afe4f4cc429fb3841fb39cd6643d"
     }
   ],
   "ratelimits": [

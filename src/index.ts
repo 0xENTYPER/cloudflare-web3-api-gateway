@@ -20,6 +20,18 @@ export default {
 
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
     if (request.method !== "GET") return json({ error: "method_not_allowed", requestId }, 405, requestId, cors);
+    if (url.pathname === "/") {
+      return json({
+        service: "cloudflare-web3-api-gateway",
+        status: "online",
+        documentation: "https://github.com/0xENTYPER/cloudflare-web3-api-gateway",
+        endpoints: {
+          health: "/health",
+          token: "/v1/token/:chain/:address"
+        },
+        supportedChains: ["ethereum", "base", "bsc", "solana"]
+      }, 200, requestId, cors);
+    }
     if (url.pathname === "/health") return json({ status: "ok", environment: env.ENVIRONMENT }, 200, requestId, cors);
 
     const token = parseTokenRoute(url.pathname);

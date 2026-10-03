@@ -12,6 +12,16 @@
 
 Public onchain APIs are useful but unreliable product dependencies. This reference Worker puts a stable boundary in front of them: validated routes, explicit CORS, native rate limiting, KV freshness states, independent provider failures, typed capitalization, structured logs, and request IDs.
 
+**Live:** [gateway-demo.pnlflex.xyz](https://gateway-demo.pnlflex.xyz) · [health](https://gateway-demo.pnlflex.xyz/health) · [real Base token response](https://gateway-demo.pnlflex.xyz/v1/token/base/0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913)
+
+Run the checked-in demo script to exercise healthy, cached, partial, validation-error, and provider-unavailable behavior:
+
+```bash
+npm run demo
+```
+
+See [`docs/live-demo.md`](docs/live-demo.md) for readable response examples and what each state proves.
+
 It is a runnable public reference, not a production gateway or a dump of private provider configuration.
 
 ## What it demonstrates
@@ -132,7 +142,7 @@ npm test
 npm run dev
 ```
 
-Before a real deployment, create a KV namespace and replace the placeholder ID in `wrangler.jsonc`. Choose a rate-limit namespace unique to the Cloudflare account and gateway policy.
+The public reference deployment uses a dedicated KV namespace and the custom domain declared in `wrangler.jsonc`. For a fork, create your own namespace, replace its ID, choose a rate-limit namespace unique to your Cloudflare account, and change or remove the custom-domain route.
 
 ```bash
 npx wrangler kv namespace create MARKET_CACHE

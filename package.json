@@ -11,6 +11,7 @@
     "types": "wrangler types",
     "check": "tsc --noEmit",
     "test": "vitest run",
+    "demo": "bash scripts/demo.sh",
     "build": "wrangler deploy --dry-run --outdir dist"
   },
   "devDependencies": {
