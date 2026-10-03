@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Cloudflare Web3 API gateway flow</title>
+  <desc id="desc">Requests pass origin validation, rate limiting, edge cache policy, provider fan-out, normalization, and an explainable response.</desc>
+  <rect width="1200" height="500" fill="#0d1117"/>
+  <text x="62" y="68" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="36" font-weight="800">AN EDGE GATEWAY THAT EXPLAINS DEGRADATION.</text>
+  <text x="62" y="106" fill="#9aa5b1" font-family="Inter,Arial,sans-serif" font-size="18">Rate limits, cache age, provider evidence and request tracing stay visible.</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="62" y="164" width="174" height="190" rx="8" fill="#141b23" stroke="#394553"/>
+    <text x="84" y="200" fill="#f59e42" font-family="monospace" font-size="13" font-weight="700">REQUEST GATE</text>
+    <text x="84" y="240" fill="#ffffff" font-size="19" font-weight="700">Origin</text>
+    <text x="84" y="270" fill="#ffffff" font-size="19" font-weight="700">Route</text>
+    <text x="84" y="300" fill="#ffffff" font-size="19" font-weight="700">Rate limit</text>
+    <path d="M236 259H284" stroke="#f59e42" stroke-width="2"/><path d="M276 251L284 259L276 267" fill="none" stroke="#f59e42" stroke-width="2"/>
+
+    <rect x="284" y="144" width="222" height="230" rx="8" fill="#171e27" stroke="#f59e42"/>
+    <text x="308" y="182" fill="#f59e42" font-family="monospace" font-size="13" font-weight="700">WORKER + KV</text>
+    <text x="308" y="224" fill="#ffffff" font-size="21" font-weight="700">Freshness policy</text>
+    <rect x="308" y="246" width="52" height="30" rx="4" fill="#17382b"/><text x="334" y="266" text-anchor="middle" fill="#67e0ae" font-family="monospace" font-size="11">FRESH</text>
+    <rect x="370" y="246" width="52" height="30" rx="4" fill="#3d3018"/><text x="396" y="266" text-anchor="middle" fill="#f7c56d" font-family="monospace" font-size="11">STALE</text>
+    <rect x="432" y="246" width="50" height="30" rx="4" fill="#29303a"/><text x="457" y="266" text-anchor="middle" fill="#c7ced6" font-family="monospace" font-size="11">MISS</text>
+    <text x="308" y="312" fill="#9aa5b1" font-size="14">stale returns immediately</text>
+    <text x="308" y="338" fill="#9aa5b1" font-size="14">refresh uses waitUntil()</text>
+    <path d="M506 259H554" stroke="#f59e42" stroke-width="2"/><path d="M546 251L554 259L546 267" fill="none" stroke="#f59e42" stroke-width="2"/>
+
+    <rect x="554" y="164" width="196" height="190" rx="8" fill="#141b23" stroke="#394553"/>
+    <text x="578" y="200" fill="#70a5ff" font-family="monospace" font-size="13" font-weight="700">PROVIDERS</text>
+    <text x="578" y="242" fill="#ffffff" font-size="19" font-weight="700">DexScreener</text>
+    <text x="578" y="278" fill="#ffffff" font-size="19" font-weight="700">GeckoTerminal</text>
+    <text x="578" y="316" fill="#9aa5b1" font-size="14">independent outcomes</text>
+    <path d="M750 259H798" stroke="#70a5ff" stroke-width="2"/><path d="M790 251L798 259L790 267" fill="none" stroke="#70a5ff" stroke-width="2"/>
+
+    <rect x="798" y="144" width="338" height="230" rx="8" fill="#18231f" stroke="#67e0ae"/>
+    <text x="824" y="182" fill="#67e0ae" font-family="monospace" font-size="13" font-weight="700">EXPLAINABLE RESPONSE</text>
+    <text x="824" y="226" fill="#ffffff" font-size="22" font-weight="700">Snapshot + evidence</text>
+    <text x="824" y="266" fill="#9aa5b1" font-size="14">quality  /  providers  /  warnings</text>
+    <text x="824" y="296" fill="#9aa5b1" font-size="14">cache state  /  ageSeconds</text>
+    <text x="824" y="326" fill="#9aa5b1" font-size="14">X-Request-ID</text>
+  </g>
+  <text x="62" y="438" fill="#9aa5b1" font-family="monospace" font-size="13">CLOUDFLARE WORKERS  /  KV  /  RATE LIMITING  /  STRUCTURED LOGS</text>
+  <text x="1136" y="438" text-anchor="end" fill="#ffffff" font-family="monospace" font-size="13">0xENTYPER</text>
+</svg>

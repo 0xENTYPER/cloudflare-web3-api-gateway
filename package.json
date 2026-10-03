@@ -1,0 +1,23 @@
+{
+  "name": "cloudflare-web3-api-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "wrangler dev",
+    "types": "wrangler types",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "wrangler deploy --dry-run --outdir dist"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^5.8.0",
+    "vitest": "^5.0.3",
+    "wrangler": "^4.147.0"
+  },
+  "license": "MIT"
+}
